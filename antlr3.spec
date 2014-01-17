@@ -209,7 +209,11 @@ popd
 # Build the C runtime
 pushd libantlr3c-%{antlr_version}-beta4
 
+%if 0%{?fedora}
 %configure --disable-abiflags --enable-debuginfo \
+%else
+%configure2_5x --disable-abiflags --enable-debuginfo \
+%endif
 %ifarch x86_64 ppc64 s390x sparc64
     --enable-64bit
 %else
@@ -274,7 +278,9 @@ install -m 755 %{SOURCE5} $RPM_BUILD_ROOT%{_bindir}/antlr3
 # install C runtime
 pushd libantlr3c-%{antlr_version}-beta4
 make DESTDIR=$RPM_BUILD_ROOT install
+%if 0%{?fedora}
 rm $RPM_BUILD_ROOT%{_libdir}/libantlr3c.{a,la}
+%endif
 pushd api/man/man3
 for file in `ls -1 * | grep -vi "^antlr3"`; do
     mv $file antlr3-$file
