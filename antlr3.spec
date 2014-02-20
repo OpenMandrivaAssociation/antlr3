@@ -280,6 +280,8 @@ pushd libantlr3c-%{antlr_version}-beta4
 make DESTDIR=$RPM_BUILD_ROOT install
 %if 0%{?fedora}
 rm $RPM_BUILD_ROOT%{_libdir}/libantlr3c.{a,la}
+%else
+rm -f $RPM_BUILD_ROOT%{_libdir}/libantlr3c.{a,la}
 %endif
 pushd api/man/man3
 for file in `ls -1 * | grep -vi "^antlr3"`; do
