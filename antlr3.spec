@@ -10,7 +10,7 @@
 Summary:            ANother Tool for Language Recognition
 Name:               antlr3
 Version:            %{antlr_version}
-Release:            15.1%{?dist}
+Release:            16
 URL:                http://www.antlr.org/
 Source0:            http://www.antlr.org/download/antlr-%{antlr_version}.tar.gz
 Source1:            http://www.antlr.org/download/C/libantlr3c-%{antlr_version}.tar.gz
@@ -156,8 +156,8 @@ sed -i 's/jsr14/1.6/' antlr3-maven-archetype/src/main/resources/archetype-resour
 					  tool/pom.xml
 
 # remove corrupted files:
-rm antlr3-maven-plugin/src/main/java/org/antlr/mojo/antlr3/._*
-rm gunit-maven-plugin/src/main/java/org/antlr/mojo/antlr3/._GUnitExecuteMojo.java
+#rm antlr3-maven-plugin/src/main/java/org/antlr/mojo/antlr3/._*
+#rm gunit-maven-plugin/src/main/java/org/antlr/mojo/antlr3/._GUnitExecuteMojo.java
 
 
 %build
@@ -198,7 +198,7 @@ mvn-rpmbuild -Dmaven.repo.local=$MAVEN_REPO_LOCAL -Dmaven.test.skip=true -Dmaven
 
 # Build the plugin
 pushd antlr3-maven-plugin
-mvn-rpmbuild -Dmaven.repo.local=$MAVEN_REPO_LOCAL -Dmaven.compile.target=1.6 install javadoc:javadoc
+mvn-rpmbuild -Dmaven.repo.local=$MAVEN_REPO_LOCAL -Dmaven.compile.target=1.7 install javadoc:javadoc
 popd
 
 ## Build the python runtime
