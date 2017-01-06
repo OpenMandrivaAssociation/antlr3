@@ -18,7 +18,7 @@ Source2:            http://www.antlr.org/download/Python/antlr_python_runtime-%{
 Source3:            http://www.antlr.org/download/antlr-javascript-runtime-%{javascript_runtime_version}.zip
 Source9:            antlr-runtime-MANIFEST.MF
 Patch1:		    0001-java8-fix.patch
-#Patch2:		    temp.patch	
+Patch2:		    temp.patch	
 License:            BSD
 BuildRequires:      maven-local
 BuildRequires:      maven-enforcer-plugin
