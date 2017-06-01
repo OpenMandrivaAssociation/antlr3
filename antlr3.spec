@@ -9,7 +9,7 @@
 Summary:            ANother Tool for Language Recognition
 Name:               antlr3
 Version:            %{antlr_version}
-Release:            2
+Release:            3
 Group:              Development/Java
 URL:                http://www.antlr.org/
 Source0:            http://www.antlr.org/download/antlr-%{antlr_version}.tar.gz
@@ -75,6 +75,7 @@ Javascript run-time support for ANTLR-generated parsers
 %package   C
 Summary:   C run-time support for ANTLR-generated parsers
 Version:   %{c_runtime_version}
+provides:   %{name}-C = %{c_runtime_version}-%{version}
 
 %description C
 C run-time support for ANTLR-generated parsers
