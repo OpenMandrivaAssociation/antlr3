@@ -112,7 +112,7 @@ C run-time support for ANTLR-generated parsers.
 
 %prep
 %setup -q -n antlr3-%{antlr_version} -a 1 -a 2 -a 3
-%apply_patches
+%autopatch -p1
 sed -i "s,\${buildNumber},`cat %{_sysconfdir}/fedora-release` `date`," tool/src/main/resources/org/antlr/antlr.properties
 
 %pom_disable_module antlr3-maven-archetype
