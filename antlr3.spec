@@ -11,7 +11,7 @@ Name:               antlr3
 Version:            %{antlr_version}
 Release:            18.4
 Group:              Development/Java
-URL:                http://www.antlr.org/
+URL:                https://www.antlr.org/
 Source0:            http://www.antlr.org/download/antlr-%{antlr_version}.tar.gz
 Source1:            http://www.antlr.org/download/C/libantlr3c-%{c_runtime_version}.tar.gz
 Source2:            http://www.antlr.org/download/Python/antlr_python_runtime-%{python_runtime_version}.tar.gz
