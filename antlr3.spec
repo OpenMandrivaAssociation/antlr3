@@ -19,6 +19,11 @@ Source3:            http://www.antlr.org/download/antlr-javascript-runtime-%{jav
 Source9:            antlr-runtime-MANIFEST.MF
 Patch1:		    0001-java8-fix.patch
 License:            BSD
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:      maven-local
 BuildRequires:      maven-enforcer-plugin
 BuildRequires:      maven-plugin-bundle
